@@ -1,1 +1,3 @@
-# 1030521276_BS435_WebProgramlama
+# 1030521276  
+# Muhammet Özdemir
+# BS435 Web Programlama
