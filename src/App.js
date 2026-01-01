@@ -8,55 +8,57 @@ const GAME_MODES = {
   LANDSCAPE: 'landscape'
 };
 
+const MAX_ROUNDS = 2;
+
 const IMAGE_SETS = {
   easy: [
     {
       images: [
-        { url: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=400', isAI: false },
-        { url: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400', isAI: false },
-        { url: 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400', isAI: true }
+        { url: '/photos/e1-ai.png', isAI: true },
+        { url: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=400', isAI: false },
+        { url: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400', isAI: false }
       ],
       hint: 'Arka plan detaylarına dikkat edin'
     },
     {
       images: [
-        { url: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400', isAI: true },
-        { url: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=400', isAI: false },
-        { url: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400', isAI: false }
+        { url: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=400', isAI: false },
+        { url: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=400', isAI: false },
+        { url: '/photos/n_ai.png', isAI: true }
       ],
-      hint: 'Işık ve gölge dengelerine bakın'
+      hint: 'Renk geçişlerini inceleyin'
     }
   ],
   normal: [
     {
       images: [
         { url: 'https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=400', isAI: false },
-        { url: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400', isAI: true },
+        { url: '/photos/m1-ai.png', isAI: true },
         { url: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=400', isAI: false }
       ],
-      hint: 'Doğal dokular ve yapay detayları karşılaştırın'
+      hint: 'Mantıksal hatalara odaklanın'
     },
     {
       images: [
-        { url: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=400', isAI: false },
-        { url: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=400', isAI: false },
-        { url: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=400', isAI: true }
+        { url: '/photos/n2_ai.png', isAI: true },
+        { url: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=400', isAI: false },
+        { url: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400', isAI: false }
       ],
-      hint: 'Renk geçişlerini inceleyin'
+      hint: 'Işık ve gölge dengelerine bakın'
     }
   ],
   hard: [
     {
       images: [
-        { url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400', isAI: false },
-        { url: 'https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=400', isAI: true },
-        { url: 'https://images.unsplash.com/photo-1482192505345-5655af888cc4?w=400', isAI: false }
+        { url: '/photos/alan-and-me.png', isAI: true },
+        { url: '/photos/westm.jpeg', isAI: false },
+        { url: '/photos/kent.jpeg', isAI: false }
       ],
       hint: 'Küçük tutarsızlıklara odaklanın'
     },
     {
       images: [
-        { url: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=400', isAI: true },
+        { url: '/photos/n3_ai.png', isAI: true },
         { url: 'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=400', isAI: false },
         { url: 'https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?w=400', isAI: false }
       ],
@@ -66,17 +68,17 @@ const IMAGE_SETS = {
   portrait: [
     {
       images: [
-        { url: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400', isAI: false },
-        { url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400', isAI: true },
-        { url: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400', isAI: false }
+        { url: '/photos/p2.png', isAI: false },
+        { url: '/photos/port1-ai.png', isAI: true },
+        { url: '/photos/port1.png', isAI: false }
       ],
-      hint: 'Yüz simetrisine ve göz detaylarına bakın'
+      hint: 'Hangisinin Bilgisayar Bilimci olamayacağına odaklanın'
     },
     {
       images: [
         { url: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400', isAI: false },
         { url: 'https://images.unsplash.com/photo-1463453091185-61582044d556?w=400', isAI: false },
-        { url: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400', isAI: true }
+        { url: '/photos/portt2.png', isAI: true }
       ],
       hint: 'Saç tellerinin doğallığını kontrol edin'
     }
@@ -84,16 +86,16 @@ const IMAGE_SETS = {
   landscape: [
     {
       images: [
-        { url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400', isAI: true },
-        { url: 'https://images.unsplash.com/photo-1468276311594-df7cb65d8df6?w=400', isAI: false },
-        { url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400', isAI: false }
+        { url: '/photos/man1-ai.png', isAI: true },
+        { url: '/photos/man-2.jpeg', isAI: false },
+        { url: '/photos/man2.jpeg', isAI: false }
       ],
       hint: 'Uzak mesafe netliğini inceleyin'
     },
     {
       images: [
         { url: 'https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400', isAI: false },
-        { url: 'https://images.unsplash.com/photo-1445264718952-f95b5a5c0d5e?w=400', isAI: true },
+        { url: '/photos/mant1-ai.png', isAI: true },
         { url: 'https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=400', isAI: false }
       ],
       hint: 'Su yansımalarına dikkat edin'
@@ -289,7 +291,6 @@ const styles = {
     color: 'white'
   }
 };
-
 function App() {
   const [gameState, setGameState] = useState('menu');
   const [selectedMode, setSelectedMode] = useState(null);
@@ -299,6 +300,12 @@ function App() {
   const [attempts, setAttempts] = useState(0);
   const [score, setScore] = useState(0);
   const [totalRounds, setTotalRounds] = useState(0);
+  const [lastPoints, setLastPoints] = useState(0);
+
+  const getMaxRoundsForMode = (mode) => {
+    const sets = IMAGE_SETS[mode] || [];
+    return Math.min(MAX_ROUNDS, sets.length);
+  };
 
   const startGame = (mode) => {
     setSelectedMode(mode);
@@ -307,39 +314,46 @@ function App() {
     setScore(0);
     setTotalRounds(0);
     setAttempts(0);
+    setLastPoints(0);
     setSelectedImage(null);
     setShowHint(false);
   };
 
   const getCurrentSet = () => {
     if (!selectedMode) return null;
-    const sets = IMAGE_SETS[selectedMode];
-    return sets[currentRound % sets.length];
+    const sets = IMAGE_SETS[selectedMode] || [];
+    return sets[currentRound] || null;
   };
 
   const handleImageClick = (index) => {
     if (selectedImage !== null) return;
-    
+
     const currentSet = getCurrentSet();
+    if (!currentSet) return;
+
+    const attemptsBefore = attempts;
     const isCorrect = currentSet.images[index].isAI;
 
     setSelectedImage(index);
-    setAttempts(attempts + 1);
+    setAttempts(attemptsBefore + 1);
 
     if (isCorrect) {
-      setScore(score + (attempts === 0 ? 100 : 50));
-      setTotalRounds(totalRounds + 1);
+      const earned = attemptsBefore === 0 ? 100 : 50;
+      setLastPoints(earned);
+      setScore((prev) => prev + earned);
+      setTotalRounds((prev) => prev + 1);
       setTimeout(() => {
         setGameState('result');
       }, 1000);
     } else {
-      if (attempts === 0) {
+      if (attemptsBefore === 0) {
         setShowHint(true);
         setTimeout(() => {
           setSelectedImage(null);
         }, 2000);
       } else {
-        setTotalRounds(totalRounds + 1);
+        setLastPoints(0);
+        setTotalRounds((prev) => prev + 1);
         setTimeout(() => {
           setGameState('result');
         }, 1000);
@@ -348,10 +362,16 @@ function App() {
   };
 
   const nextRound = () => {
+    const maxRounds = getMaxRoundsForMode(selectedMode);
+    if (currentRound + 1 >= maxRounds) {
+      backToMenu();
+      return;
+    }
     setCurrentRound(currentRound + 1);
     setSelectedImage(null);
     setShowHint(false);
     setAttempts(0);
+    setLastPoints(0);
     setGameState('playing');
   };
 
@@ -361,6 +381,10 @@ function App() {
     setCurrentRound(0);
     setScore(0);
     setTotalRounds(0);
+    setAttempts(0);
+    setLastPoints(0);
+    setSelectedImage(null);
+    setShowHint(false);
   };
 
   if (gameState === 'menu') {
@@ -374,44 +398,44 @@ function App() {
           </p>
           <div>
             <h2 style={styles.modeSelectionH2}>Zorluk Seviyesi</h2>
-            <button 
-              onClick={() => startGame(GAME_MODES.EASY)} 
+            <button
+              onClick={() => startGame(GAME_MODES.EASY)}
               style={styles.modeBtn}
-              onMouseOver={(e) => e.target.style.transform = 'translateY(-2px)'}
-              onMouseOut={(e) => e.target.style.transform = 'translateY(0)'}
+              onMouseOver={(e) => (e.target.style.transform = 'translateY(-2px)')}
+              onMouseOut={(e) => (e.target.style.transform = 'translateY(0)')}
             >
               Kolay
             </button>
-            <button 
-              onClick={() => startGame(GAME_MODES.NORMAL)} 
+            <button
+              onClick={() => startGame(GAME_MODES.NORMAL)}
               style={styles.modeBtn}
-              onMouseOver={(e) => e.target.style.transform = 'translateY(-2px)'}
-              onMouseOut={(e) => e.target.style.transform = 'translateY(0)'}
+              onMouseOver={(e) => (e.target.style.transform = 'translateY(-2px)')}
+              onMouseOut={(e) => (e.target.style.transform = 'translateY(0)')}
             >
               Normal
             </button>
-            <button 
-              onClick={() => startGame(GAME_MODES.HARD)} 
+            <button
+              onClick={() => startGame(GAME_MODES.HARD)}
               style={styles.modeBtn}
-              onMouseOver={(e) => e.target.style.transform = 'translateY(-2px)'}
-              onMouseOut={(e) => e.target.style.transform = 'translateY(0)'}
+              onMouseOver={(e) => (e.target.style.transform = 'translateY(-2px)')}
+              onMouseOut={(e) => (e.target.style.transform = 'translateY(0)')}
             >
               Zor
             </button>
             <h2 style={styles.modeSelectionH2}>Kategori</h2>
-            <button 
-              onClick={() => startGame(GAME_MODES.PORTRAIT)} 
+            <button
+              onClick={() => startGame(GAME_MODES.PORTRAIT)}
               style={styles.modeBtn}
-              onMouseOver={(e) => e.target.style.transform = 'translateY(-2px)'}
-              onMouseOut={(e) => e.target.style.transform = 'translateY(0)'}
+              onMouseOver={(e) => (e.target.style.transform = 'translateY(-2px)')}
+              onMouseOut={(e) => (e.target.style.transform = 'translateY(0)')}
             >
               Portreler
             </button>
-            <button 
-              onClick={() => startGame(GAME_MODES.LANDSCAPE)} 
+            <button
+              onClick={() => startGame(GAME_MODES.LANDSCAPE)}
               style={styles.modeBtn}
-              onMouseOver={(e) => e.target.style.transform = 'translateY(-2px)'}
-              onMouseOut={(e) => e.target.style.transform = 'translateY(0)'}
+              onMouseOver={(e) => (e.target.style.transform = 'translateY(-2px)')}
+              onMouseOut={(e) => (e.target.style.transform = 'translateY(0)')}
             >
               Manzaralar
             </button>
@@ -423,17 +447,20 @@ function App() {
 
   if (gameState === 'playing') {
     const currentSet = getCurrentSet();
-    
+    const maxRounds = getMaxRoundsForMode(selectedMode);
+
+    if (!currentSet) return null;
+
     return (
       <div style={styles.container}>
         <div style={styles.gameHeader}>
           <div style={styles.score}>Skor: {score}</div>
-          <div style={styles.score}>Tur: {totalRounds + 1}</div>
-          <button 
-            onClick={backToMenu} 
+          <div style={styles.score}>Tur: {totalRounds + 1} / {maxRounds}</div>
+          <button
+            onClick={backToMenu}
             style={styles.backBtn}
-            onMouseOver={(e) => e.target.style.background = '#667eea'}
-            onMouseOut={(e) => e.target.style.background = '#764ba2'}
+            onMouseOver={(e) => (e.target.style.background = '#667eea')}
+            onMouseOut={(e) => (e.target.style.background = '#764ba2')}
           >
             Ana Menü
           </button>
@@ -447,14 +474,14 @@ function App() {
           )}
           <div style={styles.imagesGrid}>
             {currentSet.images.map((img, index) => {
-              let containerStyle = {...styles.imageContainer};
+              let containerStyle = { ...styles.imageContainer };
               if (selectedImage === index) {
                 containerStyle = {
                   ...containerStyle,
                   ...(img.isAI ? styles.imageContainerCorrect : styles.imageContainerWrong)
                 };
               }
-              
+
               return (
                 <div
                   key={index}
@@ -483,41 +510,59 @@ function App() {
 
   if (gameState === 'result') {
     const currentSet = getCurrentSet();
-    const correctIndex = currentSet.images.findIndex(img => img.isAI);
+    const maxRounds = getMaxRoundsForMode(selectedMode);
+
+    if (!currentSet) return null;
+
+    const correctIndex = currentSet.images.findIndex((img) => img.isAI);
     const wasCorrect = selectedImage === correctIndex;
+    const isLastRound = currentRound + 1 >= maxRounds;
 
     return (
       <div style={styles.container}>
         <div style={styles.result}>
           {wasCorrect ? (
             <>
-              <h2 style={{...styles.resultH2, ...styles.success}}>Tebrikler! Doğru Buldunuz!</h2>
-              <p style={styles.resultP}>+{attempts === 0 ? 100 : 50} puan kazandınız</p>
+              <h2 style={{ ...styles.resultH2, ...styles.success }}>Tebrikler! Doğru Buldunuz!</h2>
+              <p style={styles.resultP}>+{lastPoints} puan kazandınız</p>
             </>
           ) : (
             <>
-              <h2 style={{...styles.resultH2, ...styles.failure}}>Yanlış Tahmin</h2>
-              <p style={styles.resultP}>AI tarafından üretilen görsel {correctIndex + 1}. görseldì</p>
+              <h2 style={{ ...styles.resultH2, ...styles.failure }}>Yanlış Tahmin</h2>
+              <p style={styles.resultP}>AI tarafından üretilen görsel {correctIndex + 1}. görseldi</p>
             </>
           )}
           <div style={styles.currentScore}>Toplam Skor: {score}</div>
           <div style={styles.resultActions}>
-            <button 
-              onClick={nextRound} 
-              style={styles.nextBtn}
-              onMouseOver={(e) => e.target.style.transform = 'translateY(-2px)'}
-              onMouseOut={(e) => e.target.style.transform = 'translateY(0)'}
-            >
-              Sonraki Tur
-            </button>
-            <button 
-              onClick={backToMenu} 
-              style={styles.menuBtn}
-              onMouseOver={(e) => e.target.style.transform = 'translateY(-2px)'}
-              onMouseOut={(e) => e.target.style.transform = 'translateY(0)'}
-            >
-              Ana Menü
-            </button>
+            {isLastRound ? (
+              <button
+                onClick={backToMenu}
+                style={styles.nextBtn}
+                onMouseOver={(e) => (e.target.style.transform = 'translateY(-2px)')}
+                onMouseOut={(e) => (e.target.style.transform = 'translateY(0)')}
+              >
+                Ana Menüye Dön
+              </button>
+            ) : (
+              <>
+                <button
+                  onClick={nextRound}
+                  style={styles.nextBtn}
+                  onMouseOver={(e) => (e.target.style.transform = 'translateY(-2px)')}
+                  onMouseOut={(e) => (e.target.style.transform = 'translateY(0)')}
+                >
+                  Sonraki Tur
+                </button>
+                <button
+                  onClick={backToMenu}
+                  style={styles.menuBtn}
+                  onMouseOver={(e) => (e.target.style.transform = 'translateY(-2px)')}
+                  onMouseOut={(e) => (e.target.style.transform = 'translateY(0)')}
+                >
+                  Ana Menü
+                </button>
+              </>
+            )}
           </div>
         </div>
       </div>
